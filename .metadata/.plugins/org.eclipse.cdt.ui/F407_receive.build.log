@@ -1,0 +1,10 @@
+15:24:13 **** Incremental Build of configuration Debug for project F407_receive ****
+make -j4 all 
+arm-none-eabi-size   F407_receive.elf 
+   text	   data	    bss	    dec	    hex	filename
+  20724	    120	   1728	  22572	   582c	F407_receive.elf
+Finished building: default.size.stdout
+ 
+
+15:24:14 Build Finished. 0 errors, 0 warnings. (took 578ms)
+

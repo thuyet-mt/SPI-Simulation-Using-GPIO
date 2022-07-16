@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SPI_407_Receive/Queue_&apos; to &apos;Queue&apos;" description="Rename resource &apos;Queue_&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Queue_" name="Queue" stamp="1657483481550" updateReferences="true"/>
+</session>

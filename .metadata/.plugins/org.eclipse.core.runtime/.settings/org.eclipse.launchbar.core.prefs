@@ -1,0 +1,16 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SPI_446_Send,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:test Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:test,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SPI_446_Send2_test_gui_tung_ky_tu Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F407_receive Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:test_lcd Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SPI_446_Send2
+eclipse.preferences.version=1
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F407_receive\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F407_receive\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SPI_407_Receive\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SPI_446_Send\ (1)/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:spi_send\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:spi_send\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:test\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:test\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:test/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:test_lcd\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:uart\ Debug/activeLaunchMode=run

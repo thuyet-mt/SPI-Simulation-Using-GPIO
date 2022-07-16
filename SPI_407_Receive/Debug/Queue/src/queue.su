@@ -1,0 +1,4 @@
+../Queue/src/queue.c:11:6:create	16	static
+../Queue/src/queue.c:16:6:enqueue	16	static
+../Queue/src/queue.c:24:5:dequeue	24	static
+../Queue/src/queue.c:34:6:display	40	static

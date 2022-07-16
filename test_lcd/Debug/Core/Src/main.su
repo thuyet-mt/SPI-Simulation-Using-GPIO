@@ -1,0 +1,12 @@
+../Core/Src/main.c:53:7:String_To_Binary	40	static
+../Core/Src/main.c:77:7:Get_Sub_String	40	static
+../Core/Src/main.c:97:7:Append_String	40	static
+../Core/Src/main.c:115:7:Char_To_String	24	static
+../Core/Src/main.c:124:5:Binary_To_Decimal	40	static
+../Core/Src/main.c:137:7:Binary_To_ASCII	32	static
+../Core/Src/main.c:149:7:to_str	24	static
+../Core/Src/main.c:174:5:main	536	static
+../Core/Src/main.c:235:6:SystemClock_Config	88	static
+../Core/Src/main.c:280:13:MX_I2C1_Init	8	static
+../Core/Src/main.c:313:13:MX_GPIO_Init	56	static
+../Core/Src/main.c:443:6:Error_Handler	4	static,ignoring_inline_asm

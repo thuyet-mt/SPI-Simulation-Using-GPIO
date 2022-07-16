@@ -1,0 +1,17 @@
+09:39:53 **** Incremental Build of configuration Debug for project test12 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:156:24: warning: array subscript has type 'char' [-Wchar-subscripts]
+  156 |         enqueue(&q, str[i]-48);
+      |                        ^
+..\main.c:159:13: warning: array subscript has type 'char' [-Wchar-subscripts]
+  159 |         str1[i]=q.p[i];
+      |             ^
+..\main.c:159:20: warning: array subscript has type 'char' [-Wchar-subscripts]
+  159 |         str1[i]=q.p[i];
+      |                    ^
+gcc -o test12.exe main.o 
+
+09:39:54 Build Finished. 0 errors, 3 warnings. (took 792ms)
+

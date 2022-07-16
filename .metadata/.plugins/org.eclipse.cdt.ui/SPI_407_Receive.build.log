@@ -1,0 +1,10 @@
+01:23:55 **** Incremental Build of configuration Debug for project SPI_407_Receive ****
+make -j4 all 
+arm-none-eabi-size   SPI_407_Receive.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21092	    120	   2208	  23420	   5b7c	SPI_407_Receive.elf
+Finished building: default.size.stdout
+ 
+
+01:23:55 Build Finished. 0 errors, 0 warnings. (took 529ms)
+

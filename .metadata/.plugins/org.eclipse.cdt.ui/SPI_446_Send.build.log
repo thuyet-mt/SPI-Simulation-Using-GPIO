@@ -1,0 +1,10 @@
+15:21:27 **** Incremental Build of configuration Debug for project SPI_446_Send ****
+make -j4 all 
+arm-none-eabi-size   SPI_446_Send.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9428	    120	   1656	  11204	   2bc4	SPI_446_Send.elf
+Finished building: default.size.stdout
+ 
+
+15:21:27 Build Finished. 0 errors, 0 warnings. (took 614ms)
+

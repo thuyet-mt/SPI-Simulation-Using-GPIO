@@ -1,0 +1,21 @@
+01:35:36 **** Incremental Build of configuration Debug for project test ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I"C:/Users/maith/Desktop/htn/SPI_Send/test/string_handling/inc" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:105:45: warning: array subscript has type 'char' [-Wchar-subscripts]
+  105 |     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, str[i]-48);
+      |                                             ^
+arm-none-eabi-gcc -o "test.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\maith\Desktop\htn\SPI_Send\test\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: test.elf
+ 
+arm-none-eabi-size   test.elf 
+arm-none-eabi-objdump -h -S  test.elf  > "test.list"
+   text	   data	    bss	    dec	    hex	filename
+   9416	    120	   1656	  11192	   2bb8	test.elf
+Finished building: default.size.stdout
+ 
+Finished building: test.list
+ 
+
+01:35:38 Build Finished. 0 errors, 1 warnings. (took 2s.299ms)
+
