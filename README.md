@@ -8,7 +8,7 @@ This is the reason I decided to learn about the bit-banging standard design of S
 Bit banging is creating the whole series of pulses in software, instead of relying on a piece of hardware inside the microcontroller.
 Many microcontrollers have a hardware SPI, and then all you have to do is write a byte to the output register, and the SPI controller will shift the data out, and at the same time receive data from the slave. You can get an interrupt when the transfer is complete, and then read the received data.
 
-this is pseudocode
+This is pseudo code
 ```
 Make Slave Select low  
 Short delay
