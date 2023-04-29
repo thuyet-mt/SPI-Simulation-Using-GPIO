@@ -26,12 +26,12 @@ Make Slave Select high again
 ## Master
 ### Định nghĩa chức năng cho các chân GPIO
 Cấu hình trạng thái của 4 chân:
-•	SS: Cấu hình chân ở trạng thái Output.
-•	SCK :  Cấu hình chân ở trạng thái Output.
-•	MOSI: Cấu hình chân ở trạng thái Output.
-•	Miso:   Cấu hình chân ở trạng thái Input.
+•	SS: Cấu hình chân ở trạng thái Output. \\ 
+•	SCK :  Cấu hình chân ở trạng thái Output. \\ 
+•	MOSI: Cấu hình chân ở trạng thái Output. \\ 
+•	Miso:   Cấu hình chân ở trạng thái Input. \\ 
 ### SPI Setup
-Ở giai đoạn này, chúng ta sẽ đưa chân tín hiệu clock xuống mức thấp và chân chip select lên mức cao. Đây là điều kiện ban đầu khi SPI chưa làm việc.
+Ở giai đoạn này, ta sẽ đưa chân tín hiệu clock xuống mức thấp và chân chip select lên mức cao. Đây là điều kiện ban đầu khi SPI chưa làm việc.
  ```
 void SPI_setup(void){
 	SCK_LOW;
@@ -41,14 +41,14 @@ void SPI_setup(void){
 ```
 Mục đích của hàm Delay là để cho hệ thống ổn định trước khi bắt đầu quá trình truyền dữ liệu.
 ### SPI Begin
-Muốn bắt đầu quá trình truyền nhận SPI, Master phải đưa chân chip select của Slave tương ứng xuống mức tích cực thấp. Ở báo cáo này, chúng em chỉ sử dụng 1 Master và 1 Slave.
+Muốn bắt đầu quá trình truyền nhận SPI, Master phải đưa chân chip select của Slave tương ứng xuống mức tích cực thấp. Ở đây chỉ sử dụng 1 Master và 1 Slave.
 ```
 void SPI_begin(void){
 	SS_LOW;
 }
 ```
 ### SPI Transfer
-Ở đây, nhóm em sử dụng MODE 0 của SPI, tức là CPOL=0; CPHASE=0;  bitOder = MSB.
+Sử dụng MODE 0 của SPI, tức là CPOL=0; CPHASE=0;  bitOder = MSB.
 ```
 uint8_t SPI_transfer(uint8_t byte_out){
 	uint8_t byte_in = 0;
@@ -120,7 +120,14 @@ void SPI_end(void){
 	SS_HIGH;
 }
 ```
-
+## Slave
+## Master
+### Định nghĩa chức năng cho các chân GPIO
+Cấu hình trạng thái của 4 chân:
+•	SS: Cấu hình chân ở trạng thái Input. \\ 
+•	SCK: Cấu hình chân ở trạng thái Input. \\ 
+•	MOSI: Cấu hình chân ở trạng thái Input. \\ 
+•	MISO: Cấu hình chân ở trạng thái Output. \\ 
 
 
 
