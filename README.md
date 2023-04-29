@@ -1,11 +1,11 @@
 # SPI Simulation Using Bit-banging
-SPI_Simulation_Using GPIO
-This project using bit-banging technique to simulate SPI protocol
+SPI_Simulation_Using GPIO<br>
+This project using bit-banging technique to simulate SPI protocol<br>
 
-On microcontrollers, peripherals like UART, SPI, I2C, and others are occasionally not pre-set by hardware due of various factors including cost, size, and so on. Therefore, we can configure these communication protocols using software rather than hardware.
+On microcontrollers, peripherals like UART, SPI, I2C, and others are occasionally not pre-set by hardware due of various factors including cost, size, and so on. Therefore, we can configure these communication protocols using software rather than hardware.<br>
 This is the reason I decided to learn about the bit-banging standard design of SPI communication on an STM32 microcontroller.
 
-Bit banging is creating the whole series of pulses in software, instead of relying on a piece of hardware inside the microcontroller.
+Bit banging is creating the whole series of pulses in software, instead of relying on a piece of hardware inside the microcontroller.<br>
 Many microcontrollers have a hardware SPI, and then all you have to do is write a byte to the output register, and the SPI controller will shift the data out, and at the same time receive data from the slave. You can get an interrupt when the transfer is complete, and then read the received data.
 
 This is pseudo code
@@ -73,8 +73,8 @@ uint8_t SPI_transfer(uint8_t byte_out){
 	return byte_in;
 }
 ```
-Ý tưởng của thuật toán:
-Vì một khung truyền của SPI gồm 8 bit dữ liệu, nên mỗi lần muốn lấy giá trị của từng bit, ta sử dụng toán tử AND trong C. 
+Ý tưởng của thuật toán:<br>
+Vì một khung truyền của SPI gồm 8 bit dữ liệu, nên mỗi lần muốn lấy giá trị của từng bit, ta sử dụng toán tử AND trong C.<br> 
 
 Ví dụ: 
 	Ký tự A chuyển qua binary là 01100001.
@@ -82,9 +82,10 @@ Ví dụ:
 |:----|:----|:----|:----|:----|:----|:----|:----|
 |Bit 0|Bit 1|Bit 2|Bit 3|Bit 4|Bit 5|Bit 6|Bit 7|
 
-Chân MOSI sẽ dựa vào giá trị của từng bit để điều chỉnh mức tích cực thấp hoặc cao. Muốn lấy giá trị của bit 0, ta sẽ làm phép toán 01100001 & 10000000 thu được kết quả là 0.
-	Tương tự với các bit còn lại, ta sẽ thu được kết quả là 0 hoặc khác 0. Với kết quả 0, chân  MOSI sẽ được đưa xuống mức tích cực thấp. Với kết quả khác 0, chân  MOSI sẽ được đưa lên mức tích cực cao. 
-	Sử dụng một vòng lặp for kết hợp với phép dịch bit 8 lần, ta sẽ thu được giá trị của từng bit.
+Chân MOSI sẽ dựa vào giá trị của từng bit để điều chỉnh mức tích cực thấp hoặc cao.<br>
+Muốn lấy giá trị của bit 0, ta sẽ làm phép toán 01100001 & 10000000 thu được kết quả là 0.<br>
+Tương tự với các bit còn lại, ta sẽ thu được kết quả là 0 hoặc khác 0. Với kết quả 0, chân  MOSI sẽ được đưa xuống mức tích cực thấp. Với kết quả khác 0, chân  MOSI sẽ được đưa lên mức tích cực cao.<br>
+Sử dụng một vòng lặp for kết hợp với phép dịch bit 8 lần, ta sẽ thu được giá trị của từng bit.<br>
 ```
 for(ibit = 0x80;ibit>0;ibit = ibit>>1){
 		res= byte_out & ibit;
@@ -104,11 +105,12 @@ if(read_MISO==HIGH){
 ```
 Nếu giá trị logic của chân MISO ở mức tích cực cao, ta sẽ gán giá trị đó vào từng bit của biến byte_in trong từng vòng lặp của bằng toán tử OR. Còn khi chân MISO ở mức tích cực thấp, thì giá trị bit tương ứng của biến byte_in luôn bằng 0, do ban đầu ta khởi tạo biến byte_in = 0.
 
-Ở bên phía Slave, quá trình gửi kí tự A được thực hiện tương tự như bên Master.
-Khi bit 0 được gửi từ Slave qua Master, chân MISO ở mức tích cực thấp, biến byte_in vẫn giữ nguyên giá trị 0.
-Khi bit 1 được gửi từ Slave qua Master, chân MISO ở mức tích cực cao, thực hiện phép toán 0000000  |  0100 0000, khi đó giá trị logic của chân MISO ở mức tích cực cao, biến byte_in có giá trị khác 0.
-Khi đã có được giá trị của MISO, ta sẽ tiếp tục giữ trạng thái đó trong nửa chu kỳ. Sau đó đưa giá trị của chân clock xuống mức tích cực thấp. 
-Kết thúc 1 quá trình truyền nhận bit. 
+Ở bên phía Slave, quá trình gửi kí tự A được thực hiện tương tự như bên Master.<br>
+Khi bit 0 được gửi từ Slave qua Master, chân MISO ở mức tích cực thấp, biến byte_in vẫn giữ nguyên giá trị 0.<br>
+Khi bit 1 được gửi từ Slave qua Master, chân MISO ở mức tích cực cao, thực hiện phép toán 0000000  |  0100 0000, khi đó giá trị logic của chân MISO ở mức tích cực cao, biến byte_in có giá trị khác 0.<br>
+Khi đã có được giá trị của MISO, ta sẽ tiếp tục giữ trạng thái đó trong nửa chu kỳ. <br>
+Sau đó đưa giá trị của chân clock xuống mức tích cực thấp. <br>
+Kết thúc 1 quá trình truyền nhận bit. <br>
 
 ### SPI end
 Hàm này kết thúc truyền 1 byte Master sang Slave:
@@ -121,7 +123,6 @@ void SPI_end(void){
 }
 ```
 ## Slave
-## Master
 ### Định nghĩa chức năng cho các chân GPIO
 Cấu hình trạng thái của 4 chân:<br>
 • SS: Cấu hình chân ở trạng thái Input.<br>
