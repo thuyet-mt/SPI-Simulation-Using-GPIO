@@ -150,24 +150,3 @@ uint8_t SPI_transfer(uint8_t byte_out){
 	return byte_in;
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

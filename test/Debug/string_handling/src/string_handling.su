@@ -1,6 +1,0 @@
-../string_handling/src/string_handling.c:14:7:String_To_Binary	40	static
-../string_handling/src/string_handling.c:38:7:Get_Sub_String	40	static
-../string_handling/src/string_handling.c:58:7:Append_String	40	static
-../string_handling/src/string_handling.c:76:7:Char_To_String	24	static
-../string_handling/src/string_handling.c:85:5:Binary_To_Decimal	40	static
-../string_handling/src/string_handling.c:98:7:Binary_To_ASCII	32	static
