@@ -111,9 +111,9 @@ Khi đã có được giá trị của MISO, ta sẽ tiếp tục giữ trạng 
 Kết thúc 1 quá trình truyền nhận bit. 
 
 ### SPI end
-	Hàm này kết thúc truyền 1 byte Master sang Slave:
-	Đưa chân SCK xuống mức tích cực thấp.
-	Đưa chân SS lên mức tích cực cao. 
+Hàm này kết thúc truyền 1 byte Master sang Slave:
+	  Đưa chân SCK xuống mức tích cực thấp.
+	  Đưa chân SS lên mức tích cực cao. 
 ```
 void SPI_end(void){
 	SCK_LOW;
