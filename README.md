@@ -25,11 +25,11 @@ Make Slave Select high again
 ```
 ## Master
 ### Định nghĩa chức năng cho các chân GPIO
-Cấu hình trạng thái của 4 chân:
-•	SS: Cấu hình chân ở trạng thái Output. \\ 
-•	SCK :  Cấu hình chân ở trạng thái Output. \\ 
-•	MOSI: Cấu hình chân ở trạng thái Output. \\ 
-•	Miso:   Cấu hình chân ở trạng thái Input. \\ 
+Cấu hình trạng thái của 4 chân:\\
+• SS: Cấu hình chân ở trạng thái Output.\\ 
+• SCK :  Cấu hình chân ở trạng thái Output.\\ 
+• MOSI: Cấu hình chân ở trạng thái Output.\\ 
+• Miso:   Cấu hình chân ở trạng thái Input.\\ 
 ### SPI Setup
 Ở giai đoạn này, ta sẽ đưa chân tín hiệu clock xuống mức thấp và chân chip select lên mức cao. Đây là điều kiện ban đầu khi SPI chưa làm việc.
  ```
