@@ -31,7 +31,7 @@ Cấu hình trạng thái của 4 chân:
 •	MOSI: Cấu hình chân ở trạng thái Output.
 •	Miso:   Cấu hình chân ở trạng thái Input.
 ### SPI Setup
-	Ở giai đoạn này, chúng ta sẽ đưa chân tín hiệu clock xuống mức thấp và chân chip select lên mức cao. Đây là điều kiện ban đầu khi SPI chưa làm việc.
+Ở giai đoạn này, chúng ta sẽ đưa chân tín hiệu clock xuống mức thấp và chân chip select lên mức cao. Đây là điều kiện ban đầu khi SPI chưa làm việc.
  ```
 void SPI_setup(void){
 	SCK_LOW;
@@ -39,16 +39,16 @@ void SPI_setup(void){
 	HAL_Delay(1);
 }
 ```
-	Mục đích của hàm Delay là để cho hệ thống ổn định trước khi bắt đầu quá trình truyền dữ liệu.
+Mục đích của hàm Delay là để cho hệ thống ổn định trước khi bắt đầu quá trình truyền dữ liệu.
 ### SPI Begin
-	Muốn bắt đầu quá trình truyền nhận SPI, Master phải đưa chân chip select của Slave tương ứng xuống mức tích cực thấp. Ở báo cáo này, chúng em chỉ sử dụng 1 Master và 1 Slave.
+Muốn bắt đầu quá trình truyền nhận SPI, Master phải đưa chân chip select của Slave tương ứng xuống mức tích cực thấp. Ở báo cáo này, chúng em chỉ sử dụng 1 Master và 1 Slave.
 ```
 void SPI_begin(void){
 	SS_LOW;
 }
 ```
 ### SPI Transfer
-	Ở đây, nhóm em sử dụng MODE 0 của SPI, tức là CPOL=0; CPHASE=0;  bitOder = MSB.
+Ở đây, nhóm em sử dụng MODE 0 của SPI, tức là CPOL=0; CPHASE=0;  bitOder = MSB.
 ```
 uint8_t SPI_transfer(uint8_t byte_out){
 	uint8_t byte_in = 0;
@@ -73,9 +73,10 @@ uint8_t SPI_transfer(uint8_t byte_out){
 	return byte_in;
 }
 ```
-		Ý tưởng của thuật toán:
-	Vì một khung truyền của SPI gồm 8 bit dữ liệu, nên mỗi lần muốn lấy giá trị của từng bit, ta sử dụng toán tử AND trong C. 
-  Ví dụ: 
+Ý tưởng của thuật toán:
+Vì một khung truyền của SPI gồm 8 bit dữ liệu, nên mỗi lần muốn lấy giá trị của từng bit, ta sử dụng toán tử AND trong C. 
+
+Ví dụ: 
 	Ký tự A chuyển qua binary là 01100001.
   0	     1 	  1	    0	    0	    0	    0	    1
 Bit 0	Bit 1	Bit 2	Bit 3	Bit 4	Bit 5	Bit 6	Bit 7
