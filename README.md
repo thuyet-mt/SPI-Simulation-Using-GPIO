@@ -78,9 +78,9 @@ Vì một khung truyền của SPI gồm 8 bit dữ liệu, nên mỗi lần mu�
 
 Ví dụ: 
 	Ký tự A chuyển qua binary là 01100001.
-  0	     1 	  1	    0	    0	    0	    0	    1
-Bit 0	Bit 1	Bit 2	Bit 3	Bit 4	Bit 5	Bit 6	Bit 7
-
+|0|1 |1|0|0|0|0|1|
+|:----|:----|:----|:----|:----|:----|:----|:----|
+|Bit 0|Bit 1|Bit 2|Bit 3|Bit 4|Bit 5|Bit 6|Bit 7|
 
 Chân MOSI sẽ dựa vào giá trị của từng bit để điều chỉnh mức tích cực thấp hoặc cao. Muốn lấy giá trị của bit 0, ta sẽ làm phép toán 01100001 & 10000000 thu được kết quả là 0.
 	Tương tự với các bit còn lại, ta sẽ thu được kết quả là 0 hoặc khác 0. Với kết quả 0, chân  MOSI sẽ được đưa xuống mức tích cực thấp. Với kết quả khác 0, chân  MOSI sẽ được đưa lên mức tích cực cao. 
